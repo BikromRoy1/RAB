@@ -1,43 +1,79 @@
+/**
+* Website Name: র‌্যাপিড অ্যাকশন ব্যাটালিয়ন (র‌্যাব)
+  * Updated: october 19 2023 with Bootstrap v5.3.2 least
+  * Template URL: https://www.rab.gov.bd/
+  * Author: র‌্যাপিড অ্যাকশন ব্যাটালিয়ন (র‌্যাব)
+  * License: https://www.rab.gov.bd/
+  * contact us: 151/7, Good Luck Center (7th & 8th) Floor, Green Road, Dhaka - 1205,  Bangladesh
+*/
 
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://fonts.google.com/
+#color: using Logo colors
+--------------------------------------------------------------*/
+/* Fonts */
 
+:root {
+  --default-font: 'Noto Sans Bengali', sans-serif;
+  --heading-font: 'Noto Sans Bengali', sans-serif;
+  --nav-font: 'Noto Sans Bengali', sans-serif;
+  --Bangla-font: 'Noto Sans Bengali', sans-serif;
+}
 
+/* Global Colors */
+:root {
+  --background-color: #ffffff;
+  --background-color-rgb: 255, 255, 255;
+  --default-color: #212529;
+  --default-color-rgb: 33, 37, 41;
+  --primary-color: #1cab55;
+  --primary-color-rgb: 28, 171, 85;
+  --secondary-color: #f1581e;
+  --secondary-color-rgb: 241, 88, 30;
+  --contrast-color: #ffffff;
+  --contrast-color-rgb: 255, 255, 255;
+  --text-primary-color: #111827;
+  --text-secondary-color: #4b5563;
+  --section-Background-color: #f4f7fd;
+  --main-button-hover-color: #198b46;
+}
 
+/* Nav Menu Colors */
+:root {
+  --nav-color: #3a3939;
+  --nav-hover-color: #e84545;
+  --nav-dropdown-color: #3a3939;
+  --nav-dropdown-hover-color: #e84545;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-mobile-background-color: #ffffff;
+  --Top-Navbar-background-color: #212832;
+  /* --hero-background-color: #37517e; */
+  --hero-background-color: #dcebfe;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: 'Open Sans', sans-serif;
-  color: #444444;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
 }
 
 a {
-  color: #0b0b3c;
+  color: var(--primary-color);
   text-decoration: none;
+  transition: 0.3s;
 }
 
 a:hover {
-  color: #101056;
+  color: rgba(var(--primary-color-rgb), 0.7);
   text-decoration: none;
 }
 
@@ -47,11 +83,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway', sans-serif;
+  color: var(--text-primary-color);
+  font-family: var(--heading-font);
 }
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
+
+p {
+  color: var(--text-secondary-color);
+}
+
+section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  overflow: clip;
 }
 
 /*--------------------------------------------------------------
@@ -64,7 +108,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #be1e2d;
+  background: var(--primary-color);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -78,7 +122,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #a70818;
+  color: rgba(var(--primary-color-rgb), 0.5);
 }
 
 .back-to-top:hover i {
@@ -181,32 +225,59 @@ h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #101056;
-  height: 120px;
+  background: var(--Top-Navbar-background-color);
+  height: 115px;
   font-size: 14px;
   transition: all 0.5s;
   color: #fff;
   padding: 0;
 }
+
 #topbar .logo img {
   /* max-height: 90px; */
+}
+#topbar .RAB-Logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#topbar .RAB-Logo img {
+  max-height: 100px;
+}
+#topbar .RAB-title h4 {
+  color: var(--contrast-color);
+  font-family: var(--Bangla-font);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 33px;
+  letter-spacing: 0.20000000298023224px;
+}
+#topbar .RAB-title p {
+  margin-bottom: 0px;
+  color: var(--contrast-color);
+  font-size: 17px;
+  font-weight: 400;
 }
 #topbar .logo2 img {
   max-height: 120px;
 }
+
 #topbar .logo3 img {
   max-height: 100px;
   padding-top: 10px;
 }
+
 #topbar .contact-info i {
   font-style: normal;
   color: #fff;
 }
+
 .topbar-heading-title p {
   color: #ffffff;
   padding-top: 13px;
   font-size: 27px;
   text-align: center;
+  letter-spacing: 0.20000000298023224px;
 }
 
 #topbar .contact-info i a,
@@ -236,9 +307,11 @@ h6 {
 #topbar .social-links a:hover {
   color: white;
 }
+
 .top-web-email {
   color: white;
 }
+
 .top-web-email i {
   font-size: 20px;
 }
@@ -250,7 +323,8 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 10px 0px;
-  background: linear-gradient(0deg, #be1e2d, #9c1c1a);
+  background: var(--contrast-color);
+  color: var(--text-primary-color);
 }
 
 #header.fixed-top {
@@ -283,9 +357,19 @@ h6 {
 #header .logo img {
   max-height: 40px;
 }
+
 /* .scrolled-offset {
   margin-top: 70px;
 } */
+
+.language-btn {
+  background-color: #e0e1e2;
+  border: 0;
+  outline: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 500;
+}
 
 /*--------------------------------------------------------------
 # sidebar  sticky icons Menu
@@ -300,12 +384,14 @@ h6 {
   margin: 0px;
   border-radius: 10px;
 }
+
 .right-fixed-icons ul {
   list-style: none;
   margin: 0;
   padding: 0;
   border-radius: 10px;
 }
+
 .right-fixed-icons ul li {
   list-style-type: none;
   /* background-color: #272727a5; */
@@ -331,17 +417,20 @@ h6 {
   border-radius: 5px;
   background-size: 200% auto;
 }
+
 .right-fixed-icons ul li:hover {
   margin-left: -113px;
   opacity: 100%;
   background-position: right center !important;
 }
+
 .right-fixed-icons ul li a {
   color: white;
   text-transform: uppercase;
   display: flex;
   align-items: center;
 }
+
 .right-fixed-icons ul li a i {
   font-size: 26px;
   margin-right: 10px;
@@ -358,6 +447,7 @@ h6 {
   align-items: center;
   justify-content: center;
 }
+
 .right-fixed-icons ul li a span {
   text-transform: uppercase;
   font-size: 15px;
@@ -391,11 +481,12 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 15px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary-color);
   white-space: nowrap;
   transition: 0.3s;
+  letter-spacing: 0.20000000298023224px;
 }
 
 .navbar a i,
@@ -409,7 +500,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-  color: #101056;
+  color: var(--primary-color);
 }
 
 .navbar .dropdown ul {
@@ -597,6 +688,7 @@ h6 {
   background-size: cover;
   position: relative;
 }
+
 #bg-video {
   min-width: 100%;
   min-height: 100vh;
@@ -615,6 +707,7 @@ h6 {
   left: 0;
   right: 0;
 }
+
 .video-overlay {
   position: absolute;
   top: 0;
@@ -648,6 +741,7 @@ h6 {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
 }
+
 .hero-main-title img {
   width: 175px;
   object-fit: fill;
@@ -662,6 +756,7 @@ h6 {
   color: white;
   text-transform: uppercase;
 }
+
 .hero-main-title .title-shape {
   margin: 0 auto;
   width: 50px;
@@ -669,6 +764,7 @@ h6 {
   background-color: #e41e2f;
   height: 4px;
 }
+
 .hero-main-title .title-shape ::before {
   position: absolute;
   content: '';
@@ -727,6 +823,7 @@ section {
   font-family: 'Poppins', sans-serif;
   color: #131b43;
 }
+
 .title-shape {
   margin: 0 auto;
   width: 50px;
@@ -734,6 +831,7 @@ section {
   background-color: #e41e2f;
   height: 4px;
 }
+
 .title-shape::before {
   position: absolute;
   content: '';
@@ -760,6 +858,7 @@ section {
 #service {
   padding-bottom: 0px;
 }
+
 .inner-service-container {
   position: relative;
   background: #f5f5f6;
@@ -768,6 +867,7 @@ section {
   /* margin-bottom: -138px; */
   overflow: hidden;
 }
+
 .upper-box-items {
   position: relative;
   display: block;
@@ -779,6 +879,7 @@ section {
   display: flex;
   align-items: center;
 }
+
 .upper-box-items::before {
   position: absolute;
   content: '';
@@ -789,15 +890,19 @@ section {
   transition: all 500ms ease;
   background: #101056;
 }
+
 .upper-box-items:hover::before {
   width: 100%;
 }
+
 .upper-box-items:hover h4 {
   color: white;
 }
+
 .upper-box-items:hover .online-service-icon-box {
   color: white;
 }
+
 .online-service-icon-box {
   position: absolute;
   left: 15px;
@@ -805,6 +910,7 @@ section {
   color: #a1a3b1;
   transition: all 500ms ease;
 }
+
 .upper-box-items h4 {
   position: relative;
   display: block;
@@ -814,6 +920,7 @@ section {
   margin-bottom: 1px;
   transition: all 500ms ease;
 }
+
 /* 
 .notice-board-box {
   width: 100%;
@@ -848,6 +955,7 @@ section {
   background-position: center;
   position: relative;
 }
+
 .notice::before {
   content: '';
   background: rgba(0, 0, 0, 0.6);
@@ -857,6 +965,7 @@ section {
   left: 0;
   right: 0;
 }
+
 .notice-box {
   /* background-color: white; */
   background: rgba(255, 255, 255, 0.3);
@@ -865,6 +974,7 @@ section {
   color: white;
   border-radius: 0px 0px 5px 5px;
 }
+
 .notice-btn {
   text-align: right;
 }
@@ -881,17 +991,20 @@ section {
   border: 2px solid #e6e6ea;
   border-radius: 4px;
 }
+
 .notice-btn a:hover {
   color: white;
   background: #e41e2f;
   border-color: #e41e2f;
 }
+
 /*--------------------------------------------------------------
 # Recent Activities
 --------------------------------------------------------------*/
 #activities {
   padding-bottom: 0;
 }
+
 #activities .Activities-card {
   border: none;
   padding: 10px 10px;
@@ -900,15 +1013,18 @@ section {
   background: transparent;
   transition: all 500ms ease;
 }
+
 #activities .Activities-card-single {
   background-color: white;
   box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 5%);
 }
+
 #activities .Activities-card-single img {
   width: 100%;
   transition: all 0.3s ease;
   overflow: hidden;
 }
+
 /* #activities .Activities-card:hover .Activities-card-single img {
   transform: scale(1.2);
 } */
@@ -917,12 +1033,14 @@ section {
   color: #e41e2f;
   font-weight: 600;
 }
+
 .Activities-card-single-body h5 {
   font-size: 19px;
   color: #081828;
   font-weight: 600;
   margin-bottom: 10px;
 }
+
 .Activities-card-single-body p {
   font-size: 15px;
   line-height: 24px;
@@ -931,6 +1049,7 @@ section {
   color: #888;
   border-bottom: 1px solid #e3e3e3;
 }
+
 .Activities-more-links a {
   font-size: 16px;
   line-height: 26px;
@@ -942,9 +1061,11 @@ section {
   color: #252638;
   transition: all 0.3s ease;
 }
+
 .Activities-more-links a:hover {
   color: #e41e2f;
 }
+
 .Activities-more-links a i {
   font-size: 19px;
 }
@@ -967,11 +1088,13 @@ section {
   border: 2px solid #e6e6ea;
   border-radius: 4px;
 }
+
 #activities .activities-more-btn a:hover {
   color: white;
   background: #e41e2f;
   border-color: #e41e2f;
 }
+
 #goverment-service {
   background-image: url('../img/shape-7.png');
   width: 100%;
@@ -981,6 +1104,7 @@ section {
   background-position: center;
   padding-bottom: 60px;
 }
+
 .goverment-service-card {
   border: none;
   padding: 8px 8px;
@@ -991,6 +1115,7 @@ section {
     rgba(17, 17, 26, 0.05) 0px 8px 32px;
   transition: all 500ms ease;
 }
+
 .goverment-service-card .goverment-service-card-single {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -998,9 +1123,11 @@ section {
   background-color: white;
   box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 5%);
 }
+
 .goverment-service .goverment-service-card .goverment-service-card-body {
   position: relative;
 }
+
 .goverment-service-card-single img {
   width: 150px;
   height: 150px;
@@ -1010,6 +1137,7 @@ section {
   justify-content: center;
   margin: 0 auto;
 }
+
 .goverment-service
   .goverment-service-card
   .goverment-service-card-body::before {
@@ -1029,17 +1157,20 @@ section {
   font-weight: 700;
   padding-bottom: 5px;
 }
+
 .goverment-service .goverment-service-card .goverment-service-card-body ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .goverment-service .goverment-service-card .goverment-service-card-body ul li {
   padding-left: 28px;
   position: relative;
   margin-top: 10px;
   font-size: 15px;
 }
+
 .goverment-service
   .goverment-service-card
   .goverment-service-card-body
@@ -1048,6 +1179,7 @@ section {
   a {
   color: #888;
 }
+
 .goverment-service
   .goverment-service-card
   .goverment-service-card-body
@@ -1056,6 +1188,7 @@ section {
   a:hover {
   color: #e41e2f;
 }
+
 .goverment-service
   .goverment-service-card
   .goverment-service-card-body
@@ -1078,6 +1211,7 @@ section {
   margin-bottom: 20px;
   margin-left: 10px;
 }
+
 .card-title-shape::before {
   position: absolute;
   content: '';
@@ -1097,6 +1231,7 @@ section {
   right: -8px;
   top: 0;
 }
+
 /*--------------------------------------------------------------
 # Important website links
 --------------------------------------------------------------*/
@@ -1107,6 +1242,7 @@ section {
   background-repeat: no-repeat;
   background-color: #252638;
 }
+
 @media (min-width: 1365px) {
   #imp-website-link {
     background-attachment: fixed;
@@ -1164,6 +1300,7 @@ section {
   margin: 0 auto;
   text-align: center;
 }
+
 .Important-web-link-box-icon img {
   width: 40px;
   object-fit: fill;
@@ -1270,6 +1407,7 @@ section {
   padding: 20px 25px 25px;
   border-bottom: 3px solid #e41e2f;
 }
+
 .Emergency-website-box-content h4 {
   position: relative;
   font-size: 20px;
@@ -1279,6 +1417,7 @@ section {
   padding-bottom: 11px;
   margin-bottom: 20px;
 }
+
 .Emergency-website-box-content h4::before {
   position: absolute;
   content: '';
@@ -1288,6 +1427,7 @@ section {
   bottom: 0px;
   background-color: #e41e2f;
 }
+
 .Emergency-website-box-content h4::after {
   position: absolute;
   content: '';
@@ -1297,9 +1437,11 @@ section {
   bottom: 0px;
   background-color: #e41e2f;
 }
+
 .Emergency-website-box-content-btn {
   padding-top: 4px;
 }
+
 .Emergency-website-box-content-btn a {
   text-transform: uppercase;
   color: #252638;
@@ -1310,13 +1452,16 @@ section {
   display: flex;
   align-items: center;
 }
+
 .Emergency-website-box-content-btn a:hover {
   color: #e41e2f;
 }
+
 .Emergency-website-box-content-btn a i {
   font-size: 20px;
   font-weight: 700;
 }
+
 .Emergency-icons-box {
   border: 1px solid #e6e6ea;
   width: 30px;
@@ -1330,9 +1475,11 @@ section {
   justify-content: center;
   align-items: center;
 }
+
 .Emergency-icons-box:hover {
   background-color: #e41e2f;
 }
+
 .Emergency-icons-box:hover i {
   color: white;
 }
@@ -1340,12 +1487,14 @@ section {
 .Emergency-icons-box i {
   color: #e41e2f;
 }
+
 .Emergency-website-box-social-link {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
 }
+
 .Emergency-website-box-social-link span {
   color: #616373;
   font-weight: 600;
@@ -1364,6 +1513,7 @@ section {
   width: 100%;
   height: auto;
 }
+
 #Emergency-service::before {
   background-color: #f5f5f6;
   content: '';
@@ -1374,6 +1524,7 @@ section {
   right: 0;
   opacity: 0.85;
 }
+
 #Emergency-service .emergency-serv-card {
   text-align: center;
   background-color: white;
@@ -1386,15 +1537,18 @@ section {
   margin-bottom: 15px;
   border-radius: 5px;
 }
+
 #Emergency-service .emergency-serv-card img {
   /* width: 200px; */
   transition: all 0.5s ease-in-out 0s;
   object-fit: fill;
   transform: scale(1);
 }
+
 #Emergency-service .emergency-serv-card:hover a img {
   transform: scale(1.1);
 }
+
 /* #Emergency-service .emergency-serv-card:hover {
   border-left: 2px solid #e41e2f;
 } */
@@ -1406,9 +1560,11 @@ section {
   background-color: #f4f7fa;
   /* background-color: #0d0f9110; */
 }
+
 .BD-police-video-single {
   margin-bottom: 13px;
 }
+
 .BD-police-video-single iframe {
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -1416,6 +1572,7 @@ section {
   border: 4px solid white;
   border-radius: 5px;
 }
+
 .BD-police-video-single iframe:hover {
   transform: translateY(-5px);
 }
@@ -1432,6 +1589,7 @@ section {
   background-color: #081828;
   position: relative;
 }
+
 #message-from-igp::before {
   content: '';
   background: rgba(0, 0, 0, 0.6);
@@ -1441,6 +1599,7 @@ section {
   bottom: 0;
   right: 0;
 }
+
 #message-from-igp #IGP-bg-video {
   min-width: 100%;
   min-height: 92vh;
@@ -1449,6 +1608,7 @@ section {
   object-fit: cover;
   z-index: -1;
 }
+
 #message-from-igp .IGP-video-overlay {
   position: absolute;
   left: 0;
@@ -1456,6 +1616,7 @@ section {
   bottom: 0;
   width: 100%;
 }
+
 #message-from-igp .message-from-igp-photos {
   overflow: hidden;
   text-align: center;
@@ -1464,10 +1625,12 @@ section {
   transition: 0.3s;
   border-radius: 5px 0px 0px 5px;
 }
+
 #message-from-igp .message-from-igp-photos .igp-photos {
   position: relative;
   overflow: hidden;
 }
+
 #message-from-igp .message-from-igp-photos .igp-photos::after {
   position: absolute;
   content: '';
@@ -1479,15 +1642,18 @@ section {
   background-size: contain;
   z-index: 1;
 }
+
 #message-from-igp .message-from-igp-photos .igp-info {
   padding: 5px 15px 30px 15px;
 }
+
 #message-from-igp .message-from-igp-photos .igp-info h4 {
   margin-bottom: 8px;
   font-size: 22px;
   font-weight: 600;
   color: #131b43;
 }
+
 #message-from-igp .message-from-igp-photos .igp-info span {
   font-size: 16px;
   font-weight: 500;
@@ -1496,6 +1662,7 @@ section {
 #message-from-igp .message-igp-section {
   padding: 60px 0px;
 }
+
 #message-from-igp .message-igp-details {
   background: rgba(255, 255, 255, 0.3);
   padding: 50px 45px 40px;
@@ -1514,20 +1681,24 @@ section {
 #mission .mission-image-left img {
   border-radius: 10px;
 }
+
 #mission .mission-image-right img {
   border-radius: 10px;
   height: 330px;
   object-fit: cover;
 }
+
 #mission .mission-image-left .police-wrok {
   margin-top: 20px;
   height: 260px;
   object-fit: cover;
 }
+
 #mission .mission-image-left .police-wrok-one {
   height: 200px;
   object-fit: fill;
 }
+
 #mission .mission-image-left-content h4 {
   font-weight: 600;
   padding-top: 20px;
@@ -1536,6 +1707,7 @@ section {
   font-size: 24px;
   position: relative;
 }
+
 #mission .mission-image-left-content h4::before {
   position: absolute;
   content: '';
@@ -1545,6 +1717,7 @@ section {
   bottom: 0px;
   background-color: #e41e2f;
 }
+
 #mission .mission-image-left-content h4::after {
   position: absolute;
   content: '';
@@ -1554,6 +1727,7 @@ section {
   bottom: 0px;
   background-color: #e41e2f;
 }
+
 #mission .Mission-vis-conent {
   margin-top: 15px;
 }
@@ -1567,6 +1741,7 @@ section {
   padding-bottom: 11px;
   margin-bottom: 20px;
 }
+
 #mission .Mission-vis-conent .mission-content h4::before {
   position: absolute;
   content: '';
@@ -1576,6 +1751,7 @@ section {
   bottom: 0px;
   background-color: #e41e2f;
 }
+
 #mission .Mission-vis-conent .mission-content h4::after {
   position: absolute;
   content: '';
@@ -1585,6 +1761,7 @@ section {
   bottom: 0px;
   background-color: #e41e2f;
 }
+
 #mission .Mission-vis-conent .mission-content p {
   font-weight: 600;
   color: #616373;
@@ -1592,12 +1769,14 @@ section {
   font-size: 19px;
   text-align: justify;
 }
+
 /*--------------------------------------------------------------
 # Police Activities
 --------------------------------------------------------------*/
 #police-activities {
   background: #f4f7fa;
 }
+
 .section-subtext {
   font-size: 17px !important;
   text-align: center !important;
@@ -1605,6 +1784,7 @@ section {
   color: #616373 !important;
   padding-top: 20px !important;
 }
+
 #police-activities .police-activities-card {
   border: 1px solid #eee;
   background-color: #fff;
@@ -1616,17 +1796,21 @@ section {
   position: relative;
   overflow: hidden;
 }
+
 #police-activities .police-activities-card:hover {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.116);
   transform: translateY(-8px);
 }
+
 #police-activities .police-activities-card .police-activities-card-head {
   position: relative;
 }
+
 #police-activities .police-activities-card .police-activities-card-head {
   position: relative;
   border-bottom: 1px solid #f2edee;
 }
+
 #police-activities
   .police-activities-card
   .police-activities-card-head::before {
@@ -1639,6 +1823,7 @@ section {
   bottom: -7px;
   border-radius: 5px;
 }
+
 #police-activities .police-activities-card .police-activities-card-head h4 {
   font-size: 18px;
   line-height: 26px;
@@ -1647,14 +1832,17 @@ section {
   text-transform: uppercase;
   margin-bottom: 19px;
 }
+
 #police-activities .police-activities-card-content {
   margin-top: 15px;
 }
+
 #police-activities .police-activities-card-content ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
+
 #police-activities .police-activities-card-content ul li {
   font-size: 15px;
   margin-bottom: 12px;
@@ -1663,12 +1851,14 @@ section {
   color: #081828;
   position: relative;
 }
+
 #police-activities .police-activities-card-content ul li i {
   position: absolute;
   left: 0;
   top: 4px;
   color: #e41e2f;
 }
+
 /*--------------------------------------------------------------
 # History
 --------------------------------------------------------------*/
@@ -1676,6 +1866,7 @@ section {
   border: 6px solid #dfdfdf;
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
 }
+
 #history .history-content p {
   font-weight: 500;
   color: #616373;
@@ -1683,6 +1874,7 @@ section {
   font-size: 18px;
   text-align: justify;
 }
+
 .btn-get-Details {
   font-size: 14px;
   line-height: 26px;
@@ -1695,10 +1887,12 @@ section {
   border: 2px solid #e6e6ea;
   border-radius: 4px;
 }
+
 .btn-get-Details:hover {
   background-color: #e41e2f;
   color: white;
 }
+
 /*--------------------------------------------------------------
 # Sacrifice in 1971
 --------------------------------------------------------------*/
@@ -1709,21 +1903,25 @@ section {
   font-size: 15px;
   text-align: justify;
 }
+
 #sacrifice .Sacrifice-section-item .image-stack {
   display: grid;
   position: relative;
   grid-template-columns: repeat(12, 1fr);
 }
+
 #sacrifice .Sacrifice-section-item .image-stack img {
   border: 6px solid #dfdfdf;
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
 }
+
 #sacrifice .Sacrifice-section-item .image-stack .stack-back {
   grid-column: 4/-1;
   grid-row: 1;
   width: 100%;
   z-index: 1;
 }
+
 #sacrifice .Sacrifice-section-item .image-stack .stack-front {
   grid-row: 1;
   grid-column: 1 / span 8;
@@ -1740,6 +1938,7 @@ section {
   position: relative;
   z-index: 1;
 }
+
 #units::before {
   position: absolute;
   content: '';
@@ -1753,6 +1952,7 @@ section {
   background-position: center;
   z-index: -1;
 }
+
 #units .Units-items-card {
   text-align: center;
   background-color: white;
@@ -1768,9 +1968,11 @@ section {
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.103);
   border: 1px solid #eee;
 }
+
 #units .Units-items-card:hover {
   box-shadow: none;
 }
+
 .units .swiper-pagination {
   margin-top: 20px;
   position: relative;
@@ -1804,9 +2006,11 @@ section {
   gap: 20px;
   border: 1px dashed #74b9ff;
 }
+
 .important-link-card:hover {
   transform: translateY(-8px);
 }
+
 .important-link-card .impor-icons {
   width: 50px;
   height: 50px;
@@ -1817,11 +2021,13 @@ section {
   justify-content: center;
   align-items: center;
 }
+
 .important-link-card .impor-icons img {
   height: 40px;
   width: 40px;
   object-fit: contain;
 }
+
 .import-link-content h4 {
   font-size: 18px;
   line-height: 25px;
@@ -1829,12 +2035,14 @@ section {
   color: #252638;
   margin-bottom: 1px;
 }
+
 .import-link-content p {
   margin-bottom: 0;
   color: #696b7e;
   font-weight: 500;
   font-size: 15px;
 }
+
 /*--------------------------------------------------------------
 # contact us
 --------------------------------------------------------------*/
@@ -1844,6 +2052,7 @@ section {
   background-size: cover;
   position: relative;
 }
+
 .contact:before {
   content: '';
   background: rgba(0, 0, 0, 0.6);
@@ -1859,25 +2068,31 @@ section {
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
+
 .contact .php-email-form .form-group {
   padding-bottom: 7px;
 }
+
 .contact .php-email-form input,
 .contact .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
 }
+
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
   border-color: #061e5c;
 }
+
 .contact .php-email-form input {
   height: 40px;
 }
+
 .contact .php-email-form textarea {
   padding: 10px 12px;
 }
+
 .contact .php-email-form button[type='submit'] {
   background: transparent;
   border: 0;
@@ -1888,11 +2103,13 @@ section {
   border-radius: 4px;
   margin-top: 10px;
 }
+
 .contact .php-email-form button[type='submit']:hover {
   background-color: #e41e2f;
   color: white;
   border: 2px solid #e41e2f;
 }
+
 /*--------------------------------------------------------------
 # Footers
 --------------------------------------------------------------*/
@@ -1916,6 +2133,7 @@ section {
   padding-bottom: 5px;
   color: #fff;
 }
+
 .footer a {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -1976,6 +2194,7 @@ section {
   color: white;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .footer .credits {
   padding-top: 4px;
   text-align: center;
